@@ -1,0 +1,5 @@
+# Only the app source and public assets are needed to build and serve the site.
+docs
+design-backups
+.taste-skill
+*.md

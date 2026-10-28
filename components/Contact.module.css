@@ -1,0 +1,112 @@
+/* The last screen holds Contact and the compact footer together. */
+section.contact {
+  --screen-left: calc(var(--screen) - var(--footer-h));
+  min-height: var(--screen-left);
+  background: var(--paper);
+}
+
+.grid {
+  display: grid;
+  gap: clamp(1.5rem, 1rem + 2vw, 3rem);
+  align-items: center;
+}
+
+.visual {
+  justify-self: center;
+  width: min(100%, 22rem);
+}
+
+.photo {
+  position: relative;
+  aspect-ratio: 3 / 4;
+  background: var(--paper-deep);
+}
+
+.image {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.content {
+  display: grid;
+  gap: clamp(1rem, 0.6rem + 1vw, 1.5rem);
+  justify-items: start;
+}
+
+.details {
+  display: grid;
+  gap: 1.1rem;
+  list-style: none;
+}
+
+.details li {
+  display: grid;
+  grid-template-columns: 2.5rem minmax(0, 1fr);
+  gap: 1rem;
+  align-items: start;
+  line-height: 1.5;
+}
+
+.icon {
+  width: 2.25rem;
+  height: 2.25rem;
+  color: #b8963f;
+}
+
+.label {
+  display: block;
+  font-size: var(--fs-small);
+  font-weight: 600;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: var(--forest);
+}
+
+.phone {
+  font-family: var(--font-heading);
+  font-size: var(--fs-h3);
+  font-weight: 500;
+  color: var(--green);
+  text-decoration: none;
+}
+
+.phone:hover {
+  color: var(--terracotta);
+}
+
+@media (min-width: 64em) {
+  .grid {
+    grid-template-columns: minmax(0, 4fr) minmax(0, 6fr);
+    column-gap: clamp(3rem, 7vw, 7rem);
+  }
+
+  .visual {
+    justify-self: end;
+    width: min(100%, calc((var(--screen-left) - 2 * (var(--frame-gap) + var(--section-y))) * 0.75));
+  }
+
+  /* Tighter on short screens so the details fit above the footer. */
+  .content {
+    gap: clamp(0.5rem, 2svh, 1.5rem);
+  }
+
+  .details {
+    gap: clamp(0.4rem, 1.6svh, 1.1rem);
+  }
+
+  .details li {
+    line-height: 1.4;
+  }
+
+  .icon {
+    width: clamp(1.75rem, 4svh, 2.25rem);
+    height: clamp(1.75rem, 4svh, 2.25rem);
+  }
+
+  .phone {
+    font-size: clamp(1.375rem, 4svh, 2.125rem);
+  }
+}

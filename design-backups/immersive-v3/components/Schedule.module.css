@@ -1,0 +1,177 @@
+.schedule {
+  background: var(--green);
+}
+
+.grid {
+  display: grid;
+  gap: var(--block-gap);
+}
+
+.heading {
+  color: var(--cream);
+}
+
+.photo {
+  position: relative;
+  overflow: hidden;
+  aspect-ratio: 4 / 5;
+  width: min(60%, 18rem);
+  justify-self: end;
+}
+
+.image {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.timetable {
+  display: grid;
+  gap: 1.5rem;
+  align-content: start;
+  justify-items: start;
+}
+
+.picker {
+  display: grid;
+  grid-template-columns: repeat(7, minmax(0, 1fr));
+  gap: 0.25rem;
+  width: 100%;
+}
+
+.dayButton {
+  position: relative;
+  min-height: 3rem;
+  padding: 0.5rem 0;
+  border: 0;
+  background: var(--tint-dark);
+  color: var(--on-dark);
+  font-size: var(--fs-small);
+  font-weight: 500;
+  cursor: pointer;
+  transition: background-color 0.2s var(--ease);
+}
+
+.dayButton:hover {
+  background: rgba(243, 238, 227, 0.24);
+}
+
+.dayButton[aria-pressed="true"] {
+  background: var(--gold);
+  color: var(--green);
+  font-weight: 600;
+}
+
+.today {
+  position: absolute;
+  left: 0;
+  right: 0;
+  top: calc(100% + 0.25rem);
+  font-size: var(--fs-small);
+  color: var(--gold);
+}
+
+.day {
+  width: 100%;
+}
+
+.day + .day {
+  margin-top: 1rem;
+}
+
+.dayName {
+  margin: 0.75rem 0 1rem;
+  font-size: var(--fs-h3);
+  color: var(--cream);
+}
+
+.rows {
+  display: grid;
+  gap: 1.25rem;
+  list-style: none;
+}
+
+.row {
+  display: grid;
+  grid-template-columns: 6.5rem minmax(0, 1fr);
+  gap: 0.25rem 1rem;
+  align-items: baseline;
+}
+
+.kind {
+  font-size: var(--fs-small);
+  color: var(--on-dark-soft);
+}
+
+.class {
+  display: grid;
+}
+
+.className {
+  font-family: var(--font-heading);
+  font-size: var(--fs-lead);
+  font-weight: 500;
+  line-height: 1.15;
+  color: var(--cream);
+}
+
+.note {
+  font-size: var(--fs-small);
+  color: var(--on-dark-soft);
+}
+
+.rest {
+  font-style: italic;
+  color: var(--on-dark-soft);
+}
+
+.time {
+  grid-column: 2;
+  font-size: var(--fs-small);
+  font-variant-numeric: tabular-nums;
+  color: var(--gold);
+}
+
+.dayNote {
+  margin-top: 1rem;
+  font-size: var(--fs-small);
+  color: var(--gold);
+}
+
+@media (min-width: 40em) {
+  .row {
+    grid-template-columns: 6.5rem minmax(0, 1fr) auto;
+  }
+
+  .time {
+    grid-column: 3;
+    text-align: right;
+  }
+}
+
+@media (min-width: 64em) {
+  /* Heading across the top; the photograph holds the left, the timetable is pushed right. */
+  .grid {
+    grid-template-columns: repeat(12, minmax(0, 1fr));
+    column-gap: 1.5rem;
+    align-items: end;
+  }
+
+  .heading {
+    grid-column: 1 / -1;
+    padding-left: 3vw;
+  }
+
+  .photo {
+    grid-column: 1 / span 4;
+    width: 100%;
+    max-height: calc(var(--screen) - 2 * var(--section-y) - 7rem);
+    justify-self: stretch;
+  }
+
+  .timetable {
+    grid-column: 6 / -1;
+  }
+}

@@ -1,0 +1,359 @@
+.pricing {
+  overflow: hidden;
+  background: #f8f2e8;
+}
+
+/* Terracotta fields in the two upper corners, with a curved inner edge. */
+.corner {
+  position: absolute;
+  top: 0;
+  width: clamp(5rem, 12vw, 11rem);
+  height: clamp(6rem, 22svh, 13rem);
+  background: var(--terracotta);
+  pointer-events: none;
+}
+
+.cornerLeft {
+  left: 0;
+  -webkit-mask: radial-gradient(circle at 100% 100%, #0000 70%, #000 70.5%);
+  mask: radial-gradient(circle at 100% 100%, #0000 70%, #000 70.5%);
+}
+
+.cornerRight {
+  right: 0;
+  -webkit-mask: radial-gradient(circle at 0 100%, #0000 70%, #000 70.5%);
+  mask: radial-gradient(circle at 0 100%, #0000 70%, #000 70.5%);
+}
+
+.sprig {
+  position: absolute;
+  top: clamp(1rem, 4svh, 2.5rem);
+  width: clamp(5rem, 9vw, 9rem);
+  color: var(--terracotta);
+  opacity: 0.85;
+  pointer-events: none;
+}
+
+.sprigLeft {
+  left: clamp(4rem, 13vw, 13rem);
+  transform: scaleX(-1);
+}
+
+.sprigRight {
+  right: clamp(4rem, 13vw, 13rem);
+}
+
+.inner {
+  position: relative;
+}
+
+.head {
+  display: grid;
+  justify-items: center;
+  gap: 0.5rem;
+  margin-bottom: clamp(1.25rem, 0.8rem + 1.5vw, 2.5rem);
+  text-align: center;
+}
+
+.title {
+  font-size: var(--fs-h2);
+  font-weight: 600;
+  color: var(--terracotta);
+}
+
+.headRule {
+  width: min(70%, 22rem);
+  height: 1px;
+  background: var(--line-gold);
+}
+
+.sub {
+  color: #6e5a35;
+}
+
+.cards {
+  display: grid;
+  gap: clamp(1rem, 0.5rem + 1.5vw, 2rem);
+}
+
+/* Double terracotta frame that follows the notched corners. */
+.frame {
+  --frame-color: var(--terracotta);
+  --notch: 20px;
+  padding: 2px;
+  filter: drop-shadow(0 10px 18px rgba(110, 60, 30, 0.12));
+}
+
+.card {
+  --n: 18px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  height: 100%;
+  padding: clamp(1.25rem, 0.8rem + 1vw, 1.75rem) clamp(1rem, 0.6rem + 1vw, 1.75rem);
+  background: #fbf6ee;
+  box-shadow: inset 0 0 0 6px #fbf6ee, inset 0 0 0 7px rgba(163, 75, 47, 0.45);
+}
+
+.cardHead {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.icon {
+  width: 2.5rem;
+  height: 2.5rem;
+  color: #8a6d24;
+}
+
+.group {
+  margin-top: 0.5rem;
+  font-size: clamp(1.375rem, 1.1rem + 0.8vw, 1.875rem);
+  font-weight: 600;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  color: var(--terracotta);
+}
+
+.groupRule {
+  width: 3rem;
+  height: 1px;
+  margin: 0.6rem 0 0.75rem;
+  background: var(--terracotta);
+}
+
+.items {
+  display: grid;
+  width: 100%;
+  list-style: none;
+}
+
+.item {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 1rem;
+  padding-block: 0.75rem;
+}
+
+.item + .item {
+  border-top: 1px dotted rgba(163, 75, 47, 0.45);
+}
+
+.itemText {
+  display: grid;
+  gap: 0.1rem;
+}
+
+.name {
+  font-weight: 600;
+  line-height: 1.3;
+}
+
+.details {
+  font-size: var(--fs-small);
+  line-height: 1.35;
+  color: var(--ink-soft);
+}
+
+.amount {
+  flex: none;
+  font-size: clamp(1.375rem, 1.1rem + 0.8vw, 1.875rem);
+  font-weight: 600;
+  line-height: 1.1;
+  font-variant-numeric: tabular-nums;
+  color: var(--terracotta);
+}
+
+.usd {
+  white-space: nowrap;
+  color: #6e5a35;
+}
+
+.subLink {
+  font-weight: 600;
+  color: var(--terracotta);
+  text-decoration: underline;
+  text-underline-offset: 0.3em;
+}
+
+.subLink:hover {
+  color: var(--terracotta-dark);
+}
+
+/* Terracotta banner for the booking terms. */
+.termsFrame {
+  --frame-color: var(--terracotta-dark);
+  --notch: 22px;
+  margin-top: clamp(1.25rem, 0.8rem + 1.5vw, 2.25rem);
+  padding: 2px;
+}
+
+.terms {
+  --n: 20px;
+  padding: clamp(1rem, 0.8rem + 1vw, 1.5rem) clamp(1.25rem, 0.8rem + 2vw, 3rem);
+  background: var(--terracotta);
+  box-shadow: inset 0 0 0 6px var(--terracotta), inset 0 0 0 7px rgba(243, 238, 227, 0.35);
+  color: var(--cream);
+}
+
+.termsTitle {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 0.6rem;
+  margin-bottom: 0.6rem;
+  font-family: var(--font-text);
+  font-size: var(--fs-body);
+  font-weight: 600;
+  letter-spacing: 0.16em;
+  text-transform: uppercase;
+  color: #f6dfa0;
+}
+
+.termsIcon {
+  width: 1.75rem;
+  height: 1.75rem;
+}
+
+.termsList {
+  display: grid;
+  gap: 0.3rem 2.5rem;
+  max-width: 64rem;
+  margin-inline: auto;
+  padding-left: 1.1rem;
+  font-size: var(--fs-small);
+  line-height: 1.5;
+}
+
+@media (min-width: 48em) {
+  .termsList {
+    grid-template-columns: 1fr 1fr;
+  }
+}
+
+@media (min-width: 64em) {
+  .cards {
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+  }
+}
+
+@media (max-width: 47.99em) {
+  .sprig {
+    display: none;
+  }
+}
+
+@media (min-width: 64em) {
+  /* Compact on desktop so title, cards and terms share one screen. */
+  .head {
+    gap: 0.35rem;
+    margin-bottom: clamp(0.75rem, 2.5svh, 1.75rem);
+  }
+
+  .card {
+    padding: clamp(0.75rem, 2.4svh, 1.5rem) clamp(1rem, 1.5vw, 1.5rem);
+  }
+
+  .cardHead {
+    flex-direction: row;
+    gap: 0.75rem;
+  }
+
+  .cardHead .group {
+    margin-top: 0;
+  }
+
+  .icon {
+    width: clamp(1.75rem, 4.5svh, 2.25rem);
+    height: clamp(1.75rem, 4.5svh, 2.25rem);
+  }
+
+  .group {
+    font-size: clamp(1.25rem, min(1rem + 0.8vw, 3.6svh), 1.75rem);
+  }
+
+  .groupRule {
+    margin-block: clamp(0.25rem, 1svh, 0.6rem);
+  }
+
+  .head {
+    margin-bottom: clamp(0.5rem, 2svh, 1.5rem);
+  }
+
+  .item {
+    padding-block: clamp(0.35rem, 1.3svh, 0.75rem);
+  }
+
+  .amount {
+    font-size: clamp(1.25rem, min(1rem + 0.8vw, 3.6svh), 1.75rem);
+  }
+
+  .termsFrame {
+    margin-top: clamp(0.75rem, 2.5svh, 1.75rem);
+  }
+
+  .terms {
+    padding: clamp(0.6rem, 2svh, 1.25rem) clamp(1.25rem, 3vw, 3rem);
+  }
+
+  .termsTitle {
+    margin-bottom: 0.35rem;
+  }
+
+  .termsList {
+    gap: 0.2rem 2.5rem;
+  }
+}
+
+@media (min-width: 80em) {
+  .termsList {
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    max-width: none;
+  }
+}
+
+/* Short laptop screens: Pricing is the densest section, so its small print
+   steps down a size to keep the whole price list and terms on one screen. */
+@media (min-width: 64em) and (max-height: 50em) {
+  .title {
+    font-size: clamp(2rem, 6svh, 3.5rem);
+  }
+
+  .name {
+    font-size: 0.9375rem;
+  }
+
+  .details {
+    font-size: 0.8125rem;
+    line-height: 1.3;
+  }
+
+  .item {
+    padding-block: 0.3rem;
+  }
+
+  .amount {
+    font-size: 1.25rem;
+  }
+
+  .termsList {
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    max-width: none;
+    font-size: 0.8125rem;
+    line-height: 1.4;
+  }
+}
+
+@media (min-width: 64em) and (max-width: 79.99em) {
+  .card {
+    padding-inline: 1rem;
+  }
+
+  .group {
+    font-size: 1.25rem;
+    letter-spacing: 0.04em;
+  }
+}

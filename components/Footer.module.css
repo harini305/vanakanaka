@@ -1,0 +1,109 @@
+/* Compact forest-green footer: it shares the last screen with Contact. */
+.footer {
+  background: var(--forest);
+  box-shadow: inset 0 3px 0 var(--forest), inset 0 4px 0 var(--line-gold);
+  font-size: var(--fs-small);
+}
+
+.inner {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  align-items: center;
+  gap: 0.75rem 2rem;
+  padding-block: 1.25rem 0.75rem;
+}
+
+.wordmark {
+  display: flex;
+  align-items: baseline;
+  gap: 0.6rem;
+  font-family: var(--font-heading);
+  font-size: 1.375rem;
+  font-weight: 500;
+  letter-spacing: 0.12em;
+  line-height: 1;
+  text-transform: uppercase;
+  color: var(--gold);
+}
+
+.wordmark span {
+  font-size: 0.6em;
+  letter-spacing: 0.25em;
+  color: var(--cream);
+}
+
+.nav {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0 1.25rem;
+  list-style: none;
+}
+
+.nav a,
+.bottom a {
+  display: inline-block;
+  padding-block: 0.35rem;
+  font-size: 0.75rem;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: var(--cream);
+  text-decoration: none;
+}
+
+.nav a:hover,
+.bottom a:hover,
+.whatsapp:hover {
+  color: var(--gold);
+}
+
+.links {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 0 1.5rem;
+}
+
+.bottom .whatsapp {
+  letter-spacing: 0.06em;
+  text-decoration: none;
+  color: var(--gold);
+}
+
+.bottom {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  align-items: center;
+  gap: 0.25rem 1.5rem;
+  position: relative;
+  padding-block: 0.6rem 0.9rem;
+  color: var(--on-dark-soft);
+}
+
+.bottom::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: var(--margin);
+  right: var(--margin);
+  height: 1px;
+  background: var(--line-soft);
+}
+
+.bottom a {
+  text-decoration: underline;
+  text-underline-offset: 0.3em;
+}
+
+@media (max-width: 47.99em) {
+  .inner {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  /* Room for the phone-only floating WhatsApp button, which also hides over the footer. */
+  .bottom {
+    padding-bottom: 1.5rem;
+  }
+}

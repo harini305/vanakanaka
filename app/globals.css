@@ -1,0 +1,465 @@
+/* ==========================================================================
+   Tokens (mockup-theme test)
+   ========================================================================== */
+:root {
+  /* Verified brand palette */
+  --olive: #364230;
+  --green: #1f470e;
+  --gold: #cca831;
+  --cream: #f3eee3;
+
+  /* Theme */
+  --paper: #f6f1e7;
+  --paper-deep: #ece4d3;
+  --forest: #2c3a29;
+  --line-gold: rgba(184, 150, 64, 0.75);
+  --line-soft: rgba(184, 150, 64, 0.4);
+  --terracotta: #a34b2f;
+  --terracotta-dark: #8a3d25;
+  --ink: #1f2a1d;
+  --ink-soft: #4f5649;
+  --on-dark: #f3eee3;
+  --on-dark-soft: rgba(243, 238, 227, 0.8);
+
+  /* Type: two families */
+  --font-heading: var(--font-display), "Cormorant Garamond", Georgia, serif;
+  --font-text: var(--font-body), "DM Sans", system-ui, sans-serif;
+  --fs-display: clamp(2.75rem, 1.6rem + 4.2vw, 5.5rem);
+  --fs-h2: clamp(2.25rem, 1.4rem + 3.2vw, 4.25rem);
+  --fs-h3: clamp(1.5rem, 1.2rem + 1vw, 2.125rem);
+  --fs-lead: clamp(1.125rem, 1rem + 0.4vw, 1.375rem);
+  --fs-body: 1rem;
+  --fs-small: 0.875rem;
+
+  /* Layout */
+  --header-h: 64px;
+  --margin: clamp(1rem, 0.4rem + 2.4vw, 2.5rem);
+  --content: 78rem;
+  --frame-gap: clamp(0.5rem, 0.2rem + 1vw, 1.25rem);
+  --section-y: clamp(2.5rem, min(1.6rem + 3vw, 8svh), 5rem);
+  --screen: calc(100svh - var(--header-h));
+  --footer-h: 0px; /* measured at runtime; Contact + footer share the last screen */
+  --notch: 18px;
+
+  --ease: cubic-bezier(0.22, 0.61, 0.36, 1);
+}
+
+@media (min-width: 64em) {
+  /* Desktop: everything is sized from the screen height so each section fits
+     exactly one screen, down to 768px-tall laptops. --avail is the height left
+     inside a section once its frame and padding are taken out. */
+  :root {
+    --header-h: 76px;
+    --section-y: clamp(1.25rem, 3.5svh, 3rem);
+    --avail: calc(var(--screen) - 2 * (var(--frame-gap) + var(--section-y)));
+    --fs-h2: clamp(2.25rem, min(1.4rem + 3.2vw, 7svh), 4.25rem);
+    --fs-lead: clamp(1rem, min(1rem + 0.4vw, 2.6svh), 1.375rem);
+  }
+}
+
+/* ==========================================================================
+   Base
+   ========================================================================== */
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+html {
+  -webkit-text-size-adjust: 100%;
+  text-size-adjust: 100%;
+  scroll-padding-top: var(--header-h);
+}
+
+@media (prefers-reduced-motion: no-preference) {
+  html.smooth-scroll {
+    scroll-behavior: smooth;
+  }
+}
+
+body {
+  margin: 0;
+  background: var(--paper);
+  color: var(--ink);
+  font-family: var(--font-text);
+  font-size: var(--fs-body);
+  line-height: 1.6;
+  overflow-x: clip;
+  -webkit-font-smoothing: antialiased;
+  text-rendering: optimizeLegibility;
+}
+
+h1,
+h2,
+h3,
+h4 {
+  margin: 0;
+  font-family: var(--font-heading);
+  font-weight: 500;
+  line-height: 1.05;
+  text-wrap: balance;
+}
+
+p {
+  margin: 0;
+  text-wrap: pretty;
+}
+
+ul,
+ol,
+dl,
+dd,
+figure {
+  margin: 0;
+  padding: 0;
+}
+
+img {
+  display: block;
+  max-width: 100%;
+  height: auto;
+}
+
+picture {
+  display: contents;
+}
+
+a {
+  color: inherit;
+}
+
+button,
+input,
+select,
+textarea {
+  font: inherit;
+  color: inherit;
+}
+
+:focus-visible {
+  outline: 2px solid var(--green);
+  outline-offset: 3px;
+}
+
+.on-dark :focus-visible {
+  outline-color: var(--gold);
+}
+
+::selection {
+  background: var(--gold);
+  color: var(--green);
+}
+
+/* ==========================================================================
+   Layout system
+   ========================================================================== */
+.container {
+  width: 100%;
+  max-width: calc(var(--content) + var(--margin) * 2);
+  margin-inline: auto;
+  padding-inline: var(--margin);
+}
+
+/* Every section fills at least one screen below the header and is drawn as a
+   framed board: a thin gold double rule inset from the screen edges. */
+.section {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  min-height: var(--screen);
+  padding-block: calc(var(--section-y) + var(--frame-gap));
+}
+
+.section::before,
+.section::after {
+  content: "";
+  position: absolute;
+  pointer-events: none;
+}
+
+.section::before {
+  inset: var(--frame-gap);
+  border: 1px solid var(--line-gold);
+}
+
+.section::after {
+  inset: calc(var(--frame-gap) + 6px);
+  border: 1px solid var(--line-soft);
+}
+
+.section:focus {
+  outline: none;
+}
+
+.on-dark {
+  color: var(--on-dark);
+}
+
+.visually-hidden {
+  position: absolute !important;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  margin: -1px;
+  overflow: hidden;
+  clip: rect(0 0 0 0);
+  white-space: nowrap;
+  border: 0;
+}
+
+.skip-link {
+  position: absolute;
+  left: var(--margin);
+  top: 0;
+  z-index: 100;
+  padding: 0.75rem 1rem;
+  background: var(--green);
+  color: var(--on-dark);
+  transform: translateY(-120%);
+}
+
+.skip-link:focus {
+  transform: none;
+}
+
+/* ==========================================================================
+   Theme elements
+   ========================================================================== */
+
+/* Engraved section title: capitals, generous tracking. */
+.title {
+  font-size: var(--fs-h2);
+  font-weight: 500;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  color: var(--forest);
+}
+
+.on-dark .title {
+  color: var(--gold);
+}
+
+.lead {
+  font-size: var(--fs-lead);
+  line-height: 1.5;
+  color: var(--ink-soft);
+}
+
+/* Gold rule with a small diamond at its centre. */
+.ornament {
+  display: flex;
+  align-items: center;
+  gap: 0.6rem;
+  width: min(100%, 22rem);
+  color: var(--line-gold);
+}
+
+.ornament::before,
+.ornament::after {
+  content: "";
+  flex: 1;
+  height: 1px;
+  background: currentColor;
+}
+
+.ornament > span {
+  width: 7px;
+  height: 7px;
+  border: 1px solid currentColor;
+  transform: rotate(45deg);
+}
+
+.center {
+  text-align: center;
+  margin-inline: auto;
+  justify-content: center;
+}
+
+/* Notched (concave-cornered) panels, like an engraved certificate. */
+.notched {
+  --n: var(--notch);
+  -webkit-mask:
+    radial-gradient(circle at 0 0, #0000 var(--n), #000 calc(var(--n) + 0.5px)) 0 0 / 51% 51% no-repeat,
+    radial-gradient(circle at 100% 0, #0000 var(--n), #000 calc(var(--n) + 0.5px)) 100% 0 / 51% 51% no-repeat,
+    radial-gradient(circle at 0 100%, #0000 var(--n), #000 calc(var(--n) + 0.5px)) 0 100% / 51% 51% no-repeat,
+    radial-gradient(circle at 100% 100%, #0000 var(--n), #000 calc(var(--n) + 0.5px)) 100% 100% / 51% 51% no-repeat;
+  mask:
+    radial-gradient(circle at 0 0, #0000 var(--n), #000 calc(var(--n) + 0.5px)) 0 0 / 51% 51% no-repeat,
+    radial-gradient(circle at 100% 0, #0000 var(--n), #000 calc(var(--n) + 0.5px)) 100% 0 / 51% 51% no-repeat,
+    radial-gradient(circle at 0 100%, #0000 var(--n), #000 calc(var(--n) + 0.5px)) 0 100% / 51% 51% no-repeat,
+    radial-gradient(circle at 100% 100%, #0000 var(--n), #000 calc(var(--n) + 0.5px)) 100% 100% / 51% 51% no-repeat;
+}
+
+/* A notched frame: an outer notched shape in the border colour holding an
+   inner notched shape, so the border follows the cut corners. */
+.notch-frame {
+  padding: 2px;
+  background: var(--frame-color, var(--line-gold));
+}
+
+.notch-frame > .notched {
+  --n: calc(var(--notch) - 2px);
+}
+
+/* Arched photograph inside a thin gold arch. */
+.arch-frame {
+  padding: 8px;
+  border: 1px solid var(--line-gold);
+  border-radius: 999px 999px 0 0;
+}
+
+.arch-frame > * {
+  overflow: hidden;
+  border-radius: 999px 999px 0 0;
+}
+
+/* ==========================================================================
+   Buttons & links
+   ========================================================================== */
+.btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.6rem;
+  min-height: 3rem;
+  padding: 0.75rem 1.6rem;
+  border: 1px solid transparent;
+  border-radius: 6px;
+  font-family: var(--font-text);
+  font-size: var(--fs-body);
+  font-weight: 600;
+  line-height: 1.2;
+  text-align: center;
+  text-decoration: none;
+  cursor: pointer;
+  transition:
+    background-color 0.25s var(--ease),
+    color 0.25s var(--ease),
+    border-color 0.25s var(--ease),
+    transform 0.2s var(--ease);
+}
+
+.btn:active {
+  transform: translateY(1px);
+}
+
+.btn svg {
+  width: 1.25em;
+  height: 1.25em;
+  flex: none;
+}
+
+.btn-primary {
+  background: var(--green);
+  color: var(--cream);
+  font-family: var(--font-heading);
+  font-size: 1.25rem;
+  font-style: italic;
+  font-weight: 500;
+}
+
+.btn-primary:hover {
+  background: var(--olive);
+}
+
+/* Terracotta action: cream text on #A34B2F is 5.1:1. */
+.btn-terracotta {
+  background: var(--terracotta);
+  color: var(--cream);
+  box-shadow: inset 0 0 0 1px rgba(243, 238, 227, 0.25);
+}
+
+.btn-terracotta:hover {
+  background: var(--terracotta-dark);
+}
+
+.btn-outline {
+  border-color: var(--line-gold);
+  color: var(--green);
+  background: transparent;
+}
+
+.btn-outline:hover {
+  border-color: var(--green);
+}
+
+/* Gold action on dark fields: green text on gold is 4.7:1. */
+.btn-gold {
+  background: var(--gold);
+  color: var(--green);
+}
+
+.btn-gold:hover {
+  background: #d9bb57;
+}
+
+.btn-row {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+}
+
+.text-link {
+  color: var(--green);
+  font-weight: 600;
+  text-decoration: underline;
+  text-decoration-color: var(--gold);
+  text-decoration-thickness: 1px;
+  text-underline-offset: 0.3em;
+}
+
+.text-link:hover {
+  text-decoration-color: currentColor;
+}
+
+.on-dark .text-link {
+  color: var(--gold);
+}
+
+/* ==========================================================================
+   Motion (initial states only; GSAP animates to the resting state)
+   ========================================================================== */
+.motion [data-hero],
+.motion [data-reveal] {
+  opacity: 0;
+  transform: translate3d(0, 20px, 0);
+}
+
+.motion [data-reveal-img] {
+  clip-path: inset(6% 0 0 0);
+}
+
+/* Safety net: if the animation script never initialises, show everything. */
+.motion:not(.motion-ready) [data-hero],
+.motion:not(.motion-ready) [data-reveal],
+.motion:not(.motion-ready) [data-reveal-img] {
+  animation: reveal-fallback 0.4s 2.5s forwards;
+}
+
+@keyframes reveal-fallback {
+  to {
+    opacity: 1;
+    transform: none;
+    clip-path: inset(0);
+  }
+}
+
+/* ==========================================================================
+   Page states
+   ========================================================================== */
+html.menu-open {
+  overflow: hidden;
+}
+
+@media print {
+  html.printing-intake body * {
+    visibility: hidden;
+  }
+
+  html.printing-intake [data-print-area],
+  html.printing-intake [data-print-area] * {
+    visibility: visible;
+  }
+}

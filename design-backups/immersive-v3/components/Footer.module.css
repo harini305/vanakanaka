@@ -1,0 +1,102 @@
+.footer {
+  background: var(--green);
+  font-size: var(--fs-small);
+}
+
+.top {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  gap: 2rem;
+  padding-top: clamp(2rem, 5svh, 3rem);
+}
+
+.notes {
+  display: grid;
+  gap: 0.35rem;
+  color: var(--on-dark-soft);
+}
+
+.wordmark {
+  font-family: var(--font-heading);
+  font-size: var(--fs-lead);
+  font-weight: 600;
+  color: var(--cream);
+}
+
+.social {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0 1.25rem;
+  list-style: none;
+}
+
+.social a,
+.nav a,
+.toTop {
+  display: inline-block;
+  padding-block: 0.35rem;
+  color: var(--cream);
+  text-decoration: none;
+  transition: color 0.2s var(--ease);
+}
+
+.social a:hover,
+.nav a:hover,
+.toTop:hover {
+  color: var(--gold);
+}
+
+.toTop {
+  text-decoration: underline;
+  text-decoration-color: var(--gold);
+  text-decoration-thickness: 2px;
+  text-underline-offset: 0.3em;
+}
+
+.callLabel {
+  margin-top: clamp(2.5rem, 8svh, 5rem);
+  color: var(--gold);
+}
+
+/* The number itself is the closing line, sized to fill most of the width. */
+.phone {
+  display: inline-block;
+  font-family: var(--font-heading);
+  font-size: clamp(1.75rem, 0.25rem + 8.6vw, 9rem);
+  font-weight: 500;
+  line-height: 1;
+  letter-spacing: -0.02em;
+  white-space: nowrap;
+  color: var(--cream);
+  text-decoration: none;
+  transition: color 0.25s var(--ease);
+}
+
+.phone:hover {
+  color: var(--gold);
+}
+
+.meta {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  align-items: center;
+  gap: 0.5rem 2rem;
+  padding-block: clamp(2rem, 5svh, 3rem) 1.5rem;
+  color: var(--on-dark-soft);
+}
+
+.nav {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0 1.25rem;
+  list-style: none;
+}
+
+/* Room for the phone-only floating WhatsApp button, which also hides over the footer. */
+@media (max-width: 29.99em) {
+  .meta {
+    padding-bottom: 2rem;
+  }
+}

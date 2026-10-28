@@ -1,0 +1,179 @@
+{
+  "_meta": {
+    "source": "https://vanakanaka.com (live site, WordPress 7.0.7 + Elementor 4.3.5)",
+    "captured": "2026-10-28",
+    "rule": "Values are verbatim from the original site, including typos and inconsistencies. Items marked in `_issues` are documented in ../08-issues-gaps-questions.md and must be confirmed by the business before being 'corrected'."
+  },
+  "business": {
+    "name": "Vana Kanaka Yoga Bali",
+    "short_name": "Vana Kanaka",
+    "site_tagline_wp": "Sacred Wilderness | The Liquid Gold of the Gods.",
+    "hero_eyebrow": "Sacred Wilderness · Bali",
+    "hero_subtitle": "The Liquid Gold of the Gods.",
+    "hero_body": "Experience a sacred wilderness in the heart of South Bali. A sanctuary designed to harmonize your inner strength with profound stillness.",
+    "footer_tagline": "Sacred Indulgence | In Hale Serenity of Wellness, Rejuvenate",
+    "logo_header_text": ["INHALE SERENITY OF WELLNESS, REJUVENATE", "VANA KANAKA", "SACRED INDULGENCE"],
+    "logo_alt_text": ["VANA KANAKA", "\"THE LIQUID GOLD OF THE GODS\"", "SACRED WILDRNESS"],
+    "_issues": ["Footer reads 'In Hale' while header logo artwork reads 'INHALE'", "Logo A artwork reads 'WILDRNESS' (missing E)", "Two different taglines: 'Sacred Indulgence' (logo B / footer) vs 'Sacred Wilderness' (hero, logo A)"]
+  },
+  "contact": {
+    "address_primary": "Jalan Griya Sari Permata I, Desa Kutuh, Kec. Kuta Selatan, Bali - Indonesia.",
+    "address_privacy_policy": "Jl. Mundeh 1, Br. Kaja Jati, Ds. Kutuh, Kuta Selatan, Badung, Bali, Indonesia 80361",
+    "whatsapp_numbers_displayed": ["+62 813 3974 9892", "+34 699 849 483"],
+    "whatsapp_number_linked": "6281339749892",
+    "whatsapp_booking_link": "http://api.whatsapp.com/send?phone=6281339749892&text=Hello+Vana+Kanaka+Yoga+Bali+%F0%9F%99%8F%0A%0AI%E2%80%99m+interested+in+your+yoga+classes.%0ACould+you+please+share+more+information+about+your+classes+and+availability%3F%0A%0AThank+you+%E2%9C%A8",
+    "whatsapp_booking_prefill_decoded": "Hello Vana Kanaka Yoga Bali 🙏\n\nI’m interested in your yoga classes.\nCould you please share more information about your classes and availability?\n\nThank you ✨",
+    "email": null,
+    "opening_hours_footer": ["Mon – Sat: 07:00 AM – 08:00 PM", "Sun: Special Workshops"],
+    "google_maps_share_link": "http://share.google/0fXCV0wy8XQwIrgOY",
+    "google_maps_embed": "https://maps.google.com/maps?q=Vana%20Kanaka%20Yoga%20Bali&t=m&z=14&output=embed&iwloc=near",
+    "social": {
+      "instagram": { "handle": "@vanakanakayogabali", "url": "http://www.instagram.com/vanakanakayogabali" },
+      "facebook": { "handle_displayed": "@Vana Kanaka", "url": "http://www.facebook.com/share/18rVz1HkzC/" },
+      "tiktok": { "handle": "@vana.kanaka.bali", "url": "http://www.tiktok.com/@vana.kanaka.bali" }
+    },
+    "_issues": ["Two different street addresses", "+34 (Spain) number has no link and no explanation", "No email address anywhere on the site", "Footer says Sunday = Special Workshops, but /schedule/ lists Sunday morning + afternoon sessions"]
+  },
+  "navigation": {
+    "header": [
+      { "label": "Home", "href": "/" },
+      { "label": "Classes", "href": "/classes/" },
+      { "label": "Schedule", "href": "/schedule/" },
+      { "label": "The Studio", "href": "/the-studio/" },
+      { "label": "Contact", "href": "/contact/" }
+    ],
+    "footer_quick_links": ["Home", "Classes", "Schedule", "The Studio", "Contact"],
+    "footer_legal": [{ "label": "Privacy Policy", "href": "/privacy-policy/" }],
+    "not_in_nav_but_linked": [{ "label": "FILL OUT THE FORM", "href": "/yoga-client-intake-form/" }],
+    "copyright": "© 2026 Vana Kanaka Yoga Bali. All rights reserved."
+  },
+  "signature_classes": [
+    {
+      "name": "Kanaka Power",
+      "tagline": "\"Ignite your inner fire\"",
+      "description": "A dynamic and energizing flow designed to build heat, strength, and stamina. This Vinyasa-based practice focuses on fluid movement and breath, leaving you feeling powerful and revitalized.",
+      "intensity": "High",
+      "focus": "Core Strength, Flexibility, Detoxification",
+      "image_original": "2026/05/chatgpt-image-may-18-2026-12_36_17-am.png"
+    },
+    {
+      "name": "Vana Zen",
+      "tagline": "\"Surrender to the sacred stillness\"",
+      "description": "A deeply restorative and meditative session to melt away the stresses of modern life. Incorporating yin yoga, pranayama, and mindfulness, this class is a journey into total relaxation.",
+      "intensity": "Low / gentle",
+      "focus": "Stress relief, mental clarity, deep tissue release",
+      "image_original": "2026/05/chatgpt-image-may-18-2026-12_44_09-am.png"
+    }
+  ],
+  "pricing": {
+    "section_eyebrow": "Price List (Kuta Selatan)",
+    "currency_note": "IDR with approximate USD in brackets, as written on the site",
+    "groups": [
+      {
+        "group": "Single Passes & Drop-ins",
+        "items": [
+          { "name": "Single Class Drop-in", "price": "IDR 160,000 (~$10 USD)", "idr": 160000, "usd_approx": 10, "details": "Access to any single 75 or 90-minute morning/afternoon class." },
+          { "name": "Sound Healing Drop-in", "badge": "EVENING RITUAL", "price": "IDR 200,000 (~$13 USD)", "idr": 200000, "usd_approx": 13, "details": "Access to special night events (Sound Healing, Kirtan, Trataka)." }
+        ]
+      },
+      {
+        "group": "Class Packages",
+        "items": [
+          { "name": "3-Class Pass", "price": "IDR 450,000 (~$29 USD)", "idr": 450000, "usd_approx": 29, "details": "Valid for 7 days. Includes all morning, afternoon, and evening ritual sessions for 7 days." },
+          { "name": "5-Class Pass", "badge": "MOST POPULAR", "price": "IDR 700,000 (~$45 USD)", "idr": 700000, "usd_approx": 45, "details": "Valid for 14 days. Includes all morning, afternoon, and evening ritual sessions for 7 days.", "_issue": "'Valid for 14 days' conflicts with 'for 7 days' in the same sentence" },
+          { "name": "Unlimited Weekly Pass", "price": "IDR 1,100,000 (~$70 USD)", "idr": 1100000, "usd_approx": 70, "details": "Includes all morning, afternoon, and evening ritual sessions for 7 days." }
+        ]
+      },
+      {
+        "group": "Private Sessions",
+        "items": [
+          { "name": "Private 1-on-1 Yoga / Yoga Therapy", "price": "IDR 950,000 (~$60 USD) / session", "idr": 950000, "usd_approx": 60, "unit": "session" },
+          { "name": "Private Group Session (Up to 4 people)", "price": "IDR 1,500,000 (~$95 USD) / session", "idr": 1500000, "usd_approx": 95, "unit": "session", "capacity": 4 }
+        ]
+      }
+    ],
+    "card_ctas": ["BOOK VIA WHATSAPP -> whatsapp_booking_link", "FILL OUT THE FORM -> /yoga-client-intake-form/"],
+    "repeated_card_footnote": "Yoga Shala Available For Rent! Your practice deserves the perfect space. Rent our fully-equipped, serene yoga shala for workshops, classes, and retreats.",
+    "_issues": ["Shala-rental footnote repeated in all 9 cards (no price, no dedicated CTA)", "USD conversions are approximate and undated"]
+  },
+  "schedule": {
+    "eyebrow": "Weekly Yoga Schedule",
+    "title": "Daily Practice Journey",
+    "intro": "Find your center with our carefully curated daily rhythm. From energizing morning flows to restorative afternoon sessions and grounding evening rituals, each day is designed to guide you deeper into your practice.",
+    "slots": { "morning": "07:00 – 08:30", "afternoon": "16:30 – 17:45", "evening": null },
+    "_issues": ["Evening time is not stated anywhere", "Morning slot is 90 min, afternoon 75 min (matches '75 or 90-minute' drop-in text)", "Days have no per-class instructor, capacity or booking link"],
+    "days": [
+      { "day": "Monday", "morning": { "class": "Vinyasa Flow", "note": "Setting Intentions & Solar Awakening" }, "afternoon": { "class": "Yin Yoga", "note": "Deep Tissue Release & Grounding" }, "evening": { "class": null, "note": "Rest / Open" } },
+      { "day": "Tuesday", "morning": { "class": "Ashtanga Led", "note": "Building Heat & Core Strength" }, "afternoon": { "class": "Pranayama & Nidra", "note": null }, "evening": { "class": "Sound Healing", "note": null } },
+      { "day": "Wednesday", "morning": { "class": "Hatha Yoga", "note": "Alignment, Balance & Stability" }, "afternoon": { "class": "Gentle Flow & Restorative", "note": "Calming the Nervous System" }, "evening": { "class": "Trataka Meditation", "note": null } },
+      { "day": "Thursday", "morning": { "class": "Creative Vinyasa", "note": "Heart Openers & Backbends" }, "afternoon": { "class": "Myofascial Release", "note": "Yin with Yoga Therapy" }, "evening": { "class": "Devotional Chanting", "note": null } },
+      { "day": "Friday", "morning": { "class": "Chakra Flow", "note": "Balancing the 7 Energy Centers" }, "afternoon": { "class": "Decompression Stretch", "note": "Hip Openers & Twists" }, "evening": { "class": "Yoga Nidra", "note": "Deep Conscious Relaxation" } },
+      { "day": "Saturday", "morning": { "class": "Power Yoga", "note": "Strength, Sweat & Celebration" }, "afternoon": { "class": "Slow Flow & Mudras", "note": "Mindful Hand Gestures & Movement" }, "evening": { "class": "Closing Circle", "note": "Gratitude & Reflection Ceremony" } },
+      { "day": "Sunday", "morning": { "class": "Spiritual Morning Flow", "note": "Gentle Integration & Movement" }, "afternoon": { "class": "Free Afternoon / Self-Study", "note": "Pranayama & Nidra" }, "evening": { "class": null, "note": "Rest / Open" } }
+    ]
+  },
+  "masterclass": {
+    "eyebrow": "Masterclass",
+    "title": "Quantum NLP & Hypnotherapy",
+    "subtitle": "Rewrite Your Reality from the Subconscious Up",
+    "intro": [
+      "Are you ready to break free from old patterns, collapse limiting timelines, and step into the highest version of yourself?",
+      "Welcome to a revolutionary blend of Quantum Physics, Neuro-Linguistic Programming (NLP), and Clinical Hypnotherapy. This class isn’t just about understanding your mind—it’s about re-architecting your entire reality."
+    ],
+    "triad_title": "The Power of the Triad",
+    "triad_intro": "By combining these three modalities, we target transformation from three distinct angles:",
+    "triad": [
+      { "name": "Quantum Theory", "text": "Shifts your perspective on time, energy, and potential. You stop viewing blockages as permanent and start seeing them as fluid possibilities." },
+      { "name": "NLP", "text": "Rewires the conscious language, habits, and mental maps you use daily. You take active control of your daily thoughts, reactions, and behaviors." },
+      { "name": "Hypnotherapy", "text": "Drops you into a deep alpha/theta brainwave state to access the subconscious." }
+    ],
+    "quote": "\"The subconscious mind runs 95% of our lives. When you align your subconscious energy with quantum potential, manifestation ceases to be an effort—it becomes your default state.\"",
+    "quote_attribution": null,
+    "experience_title": "What You Will Experience",
+    "experience_intro": "In this immersive class, you will go beyond traditional talk therapy and standard mindset coaching. Together, we will:",
+    "experience_points": [
+      { "title": "Collapse Limiting Timelines", "text": "Identify the quantum “patterns” keeping you stuck in the past and consciously choose a new trajectory." },
+      { "title": "Reprogram the Subconscious", "text": "Use targeted hypnotherapy to dissolve deep-seated fears, anxiety, and imposter syndrome." },
+      { "title": "Master Mind-Body Language", "text": "Learn NLP techniques to instantly shift your emotional state, boost confidence, and communicate with impact." },
+      { "title": "Anchor Quantum Shifts", "text": "Learn how to lock in your breakthroughs so they become your permanent, everyday reality." }
+    ],
+    "audience_title": "Who This Class Is For",
+    "audience": "This experience is designed for seekers, leaders, healers, and anyone who feels “stuck” despite doing all the traditional mindset work. If you are ready to stop managing your symptoms and start shifting your core identity, you are in the right place.",
+    "duration": "2 hours/ 4-Week Immersive",
+    "format": "Self-Paced Course",
+    "cta": "SECOURE YOUR SPOT NOW -> whatsapp_booking_link",
+    "price": null,
+    "facilitator": null,
+    "dates": null,
+    "_issues": ["CTA typo 'SECOURE'", "'2 hours / 4-Week Immersive' vs 'Self-Paced Course' contradict", "No price, dates, facilitator or location", "Not listed on /classes/ or /schedule/; only on Home", "Health/therapy claims (anxiety, '95%') are unsourced — business must own them"]
+  },
+  "why_choose_us": {
+    "eyebrow": "WHY CHOOSE US",
+    "title": "Why Vana Kanaka?",
+    "items": [
+      { "title": "Sacred Space", "text": "A beautifully designed studio in Kutuh, offering a peaceful escape from the hustle." },
+      { "title": "Expert Guidance", "text": "Our instructors are dedicated to supporting your journey, whether you are a beginner or an advanced practitioner." },
+      { "title": "Inclusive Community", "text": "We welcome every body, every age, and every level. No flexibility required—only an open heart." }
+    ],
+    "_issues": ["Section appears twice on Home (data-id c3a0137 and 77bbb8b)", "No instructors are named anywhere on the site"]
+  },
+  "studio": {
+    "page_title": "VANA KANAKA YOGA STUDIO",
+    "home_section": { "eyebrow": "THE STUDIO", "title": "Vana Kanaka Yoga Studio Bali", "cta": "MORE -> /the-studio/" },
+    "amenities": {
+      "eyebrow": "Wellness in Every Detail",
+      "title": "Studio Amenities",
+      "text": "Experience a sacred wilderness in the heart of South Bali. A sanctuary designed to harmonize your inner strength with profound stillness.",
+      "items_shown_as_images_only": ["Yoga mat (green, mandala)", "Yoga straps", "Yoga wheels", "Yoga blocks"],
+      "_issues": ["Amenities text is a copy of the hero body text, not an amenity description", "Amenities are images only, no labels"]
+    },
+    "mentioned_facilities": ["Yoga shala for rent (workshops, classes, retreats)", "Lockers (SOP section 5)", "Shoe racks (SOP section 2)", "Sanitizing sprays (SOP section 3)", "Pool (visible in photos only; never mentioned in text)"]
+  },
+  "philosophy": {
+    "eyebrow": "Our Philosophy",
+    "title": "The Liquid Gold of the Gods",
+    "text": "Experience a sacred wilderness in the heart of South Bali. A sanctuary designed to harmonize your inner strength with profound stillness.",
+    "cta": "EXPLORE THE STUDIO -> /the-studio/",
+    "_issues": ["Text identical to the hero body text"]
+  }
+}

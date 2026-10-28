@@ -1,0 +1,364 @@
+/* ==========================================================================
+   Tokens
+   ========================================================================== */
+:root {
+  /* Verified brand palette */
+  --olive: #364230;
+  --green: #1f470e;
+  --gold: #cca831;
+  --cream: #f3eee3;
+
+  /* Tone steps for surfaces (no lines between them) */
+  --cream-deep: #e9e1cf;
+  --sand: #f0e2c3;
+  --ink: #1d2419;
+  --ink-soft: #4d5446;
+  --on-dark: #f3eee3;
+  --on-dark-soft: rgba(243, 238, 227, 0.82);
+  --tint-dark: rgba(243, 238, 227, 0.14);
+
+  /* Type: two families, five sizes */
+  --font-heading: var(--font-display), "Cormorant Garamond", Georgia, serif;
+  --font-text: var(--font-body), "DM Sans", system-ui, sans-serif;
+  --fs-display: clamp(3.75rem, 11vw, 11.5rem);
+  --fs-h2: clamp(2.5rem, 1.4rem + 3.6vw, 4.75rem);
+  --fs-h3: clamp(1.625rem, 1.3rem + 1vw, 2.25rem);
+  --fs-lead: 1.3125rem;
+  --fs-body: 1.0625rem;
+  --fs-small: 0.875rem;
+
+  /* Layout */
+  --header-h: 64px;
+  --margin: clamp(1rem, 0.4rem + 2.4vw, 2.5rem);
+  --content: 82rem;
+  --section-y: clamp(2.5rem, min(1.6rem + 3vw, 8svh), 5.5rem);
+  --block-gap: clamp(1.5rem, 1rem + 1.6vw, 3rem);
+  --screen: calc(100svh - var(--header-h));
+  --scrim: rgba(12, 18, 10, 0.62);
+
+  --ease: cubic-bezier(0.22, 0.61, 0.36, 1);
+  --ease-out: cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+@media (min-width: 64em) {
+  :root {
+    --header-h: 72px;
+  }
+}
+
+/* ==========================================================================
+   Base
+   ========================================================================== */
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+html {
+  -webkit-text-size-adjust: 100%;
+  text-size-adjust: 100%;
+  scroll-padding-top: var(--header-h);
+}
+
+@media (prefers-reduced-motion: no-preference) {
+  html.smooth-scroll {
+    scroll-behavior: smooth;
+  }
+}
+
+body {
+  margin: 0;
+  background: var(--cream);
+  color: var(--ink);
+  font-family: var(--font-text);
+  font-size: var(--fs-body);
+  line-height: 1.55;
+  overflow-x: clip;
+  -webkit-font-smoothing: antialiased;
+  text-rendering: optimizeLegibility;
+}
+
+h1,
+h2,
+h3,
+h4 {
+  margin: 0;
+  font-family: var(--font-heading);
+  font-weight: 500;
+  line-height: 1;
+  letter-spacing: -0.02em;
+  text-wrap: balance;
+}
+
+h2 {
+  font-size: var(--fs-h2);
+}
+
+h3 {
+  font-size: var(--fs-h3);
+  line-height: 1.1;
+}
+
+p {
+  margin: 0;
+  text-wrap: pretty;
+}
+
+ul,
+ol,
+dl,
+dd,
+figure {
+  margin: 0;
+  padding: 0;
+}
+
+img {
+  display: block;
+  max-width: 100%;
+  height: auto;
+}
+
+picture {
+  display: contents;
+}
+
+a {
+  color: inherit;
+}
+
+button,
+input,
+select,
+textarea {
+  font: inherit;
+  color: inherit;
+}
+
+:focus-visible {
+  outline: 2px solid var(--green);
+  outline-offset: 3px;
+}
+
+.on-dark :focus-visible {
+  outline-color: var(--gold);
+}
+
+::selection {
+  background: var(--gold);
+  color: var(--green);
+}
+
+/* ==========================================================================
+   Layout system
+   ========================================================================== */
+.container {
+  width: 100%;
+  max-width: calc(var(--content) + var(--margin) * 2);
+  margin-inline: auto;
+  padding-inline: var(--margin);
+}
+
+/* Every section fills at least one screen below the header, so following a
+   nav link shows that section alone. Anchor offsets come from
+   scroll-padding-top on <html>. */
+.section {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  min-height: var(--screen);
+  padding-block: var(--section-y);
+}
+
+.section:focus {
+  outline: none;
+}
+
+.on-dark {
+  color: var(--on-dark);
+}
+
+.soft {
+  color: var(--ink-soft);
+}
+
+.on-dark .soft {
+  color: var(--on-dark-soft);
+}
+
+.small {
+  font-size: var(--fs-small);
+}
+
+.visually-hidden {
+  position: absolute !important;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  margin: -1px;
+  overflow: hidden;
+  clip: rect(0 0 0 0);
+  white-space: nowrap;
+  border: 0;
+}
+
+.skip-link {
+  position: absolute;
+  left: var(--margin);
+  top: 0;
+  z-index: 100;
+  padding: 0.75rem 1rem;
+  background: var(--green);
+  color: var(--on-dark);
+  transform: translateY(-120%);
+}
+
+.skip-link:focus {
+  transform: none;
+}
+
+/* ==========================================================================
+   Buttons & links (one shape: square corners)
+   ========================================================================== */
+.btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 3rem;
+  padding: 0.75rem 1.5rem;
+  border: 0;
+  border-radius: 0;
+  font-family: var(--font-text);
+  font-size: var(--fs-small);
+  font-weight: 600;
+  letter-spacing: 0.02em;
+  line-height: 1.2;
+  text-align: center;
+  text-decoration: none;
+  cursor: pointer;
+  transition:
+    background-color 0.25s var(--ease),
+    color 0.25s var(--ease),
+    transform 0.2s var(--ease);
+}
+
+.btn:active {
+  transform: translateY(1px);
+}
+
+.btn-primary {
+  background: var(--green);
+  color: var(--cream);
+}
+
+.btn-primary:hover {
+  background: var(--olive);
+}
+
+.btn-paper {
+  background: var(--cream);
+  color: var(--green);
+}
+
+.btn-paper:hover {
+  background: var(--sand);
+}
+
+/* Gold is only ever paired with dark green text (4.7:1). */
+.btn-gold {
+  background: var(--gold);
+  color: var(--green);
+}
+
+.btn-gold:hover {
+  background: var(--sand);
+}
+
+.btn-row {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+}
+
+.text-link {
+  color: var(--green);
+  font-weight: 600;
+  text-decoration: underline;
+  text-decoration-color: var(--gold);
+  text-decoration-thickness: 2px;
+  text-underline-offset: 0.3em;
+  transition: text-decoration-color 0.2s var(--ease);
+}
+
+.text-link:hover {
+  text-decoration-color: currentColor;
+}
+
+.on-dark .text-link {
+  color: var(--cream);
+}
+
+/* ==========================================================================
+   Motion (initial states only; GSAP animates to the resting state)
+   ========================================================================== */
+
+/* Masked headline: each authored line rises from behind its own baseline. */
+.mask-line {
+  display: block;
+  overflow: hidden;
+  padding-bottom: 0.1em;
+  margin-bottom: -0.1em;
+}
+
+.mask-line > span {
+  display: block;
+}
+
+.motion [data-line] {
+  transform: translate3d(0, 105%, 0);
+}
+
+.motion [data-hero],
+.motion [data-reveal] {
+  opacity: 0;
+  transform: translate3d(0, 24px, 0);
+}
+
+.motion [data-reveal-img] {
+  clip-path: inset(8% 0 0 0);
+}
+
+/* Safety net: if the animation script never initialises, show everything. */
+.motion:not(.motion-ready) [data-line],
+.motion:not(.motion-ready) [data-hero],
+.motion:not(.motion-ready) [data-reveal],
+.motion:not(.motion-ready) [data-reveal-img] {
+  animation: reveal-fallback 0.4s 2.5s forwards;
+}
+
+@keyframes reveal-fallback {
+  to {
+    opacity: 1;
+    transform: none;
+    clip-path: inset(0);
+  }
+}
+
+/* ==========================================================================
+   Page states
+   ========================================================================== */
+html.menu-open {
+  overflow: hidden;
+}
+
+@media print {
+  html.printing-intake body * {
+    visibility: hidden;
+  }
+
+  html.printing-intake [data-print-area],
+  html.printing-intake [data-print-area] * {
+    visibility: visible;
+  }
+}

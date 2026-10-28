@@ -1,0 +1,152 @@
+.classes {
+  display: grid;
+}
+
+.panel {
+  display: flex;
+  flex-direction: column;
+  min-height: 78svh;
+}
+
+.power {
+  background: var(--olive);
+  color: var(--on-dark);
+}
+
+.zen {
+  background: var(--sand);
+  color: var(--ink);
+}
+
+.heading {
+  padding: clamp(1.5rem, 4svh, 2.5rem) var(--margin) clamp(1rem, 2.5svh, 1.75rem);
+  font-size: var(--fs-h2);
+  color: var(--cream);
+}
+
+/* The photograph runs to the panel's edges and takes whatever height is left. */
+.photo {
+  position: relative;
+  flex: 1 1 auto;
+  min-height: 14rem;
+  overflow: hidden;
+}
+
+.image {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.body {
+  display: grid;
+  gap: 1.25rem;
+  padding: clamp(1.25rem, 3svh, 2rem) var(--margin) clamp(1.5rem, 4svh, 2.5rem);
+}
+
+.text {
+  display: grid;
+  gap: 0.5rem;
+}
+
+.name {
+  font-size: var(--fs-h3);
+}
+
+.power .name {
+  color: var(--cream);
+}
+
+.zen .name {
+  color: var(--green);
+}
+
+.tagline {
+  font-family: var(--font-heading);
+  font-size: var(--fs-lead);
+  font-style: italic;
+  line-height: 1.2;
+}
+
+.power .tagline {
+  color: var(--gold);
+}
+
+.zen .tagline {
+  color: var(--olive);
+}
+
+.description {
+  max-width: 34rem;
+}
+
+.fact {
+  font-size: var(--fs-small);
+}
+
+.power .fact {
+  color: var(--on-dark-soft);
+}
+
+.zen .fact {
+  color: var(--ink-soft);
+}
+
+.actions {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 0.75rem 1.5rem;
+}
+
+.secondary {
+  font-size: var(--fs-small);
+  font-weight: 600;
+  text-decoration: underline;
+  text-decoration-thickness: 2px;
+  text-underline-offset: 0.3em;
+}
+
+.power .secondary {
+  text-decoration-color: var(--gold);
+}
+
+.zen .secondary {
+  color: var(--green);
+  text-decoration-color: var(--gold);
+}
+
+.power :focus-visible {
+  outline-color: var(--gold);
+}
+
+@media (min-width: 48em) {
+  /* Side by side, one screen tall, meeting on a clean vertical edge. */
+  .classes {
+    grid-template-columns: 1fr 1fr;
+    min-height: var(--screen);
+  }
+
+  .panel {
+    min-height: var(--screen);
+  }
+
+  .body {
+    grid-template-columns: minmax(0, 1fr);
+  }
+}
+
+@media (min-width: 80em) {
+  .body {
+    grid-template-columns: minmax(0, 1fr) auto;
+    align-items: end;
+    gap: 2rem;
+  }
+
+  .actions {
+    flex-direction: column;
+    align-items: flex-end;
+  }
+}

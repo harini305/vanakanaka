@@ -1,0 +1,186 @@
+.grid {
+  display: grid;
+  gap: clamp(2rem, 1rem + 3vw, 4rem);
+  align-items: center;
+}
+
+.copy {
+  display: grid;
+  gap: clamp(1rem, 0.6rem + 1.2vw, 1.75rem);
+  justify-items: start;
+}
+
+/* Logo mark over the engraved name, as on the studio's stationery. */
+.brand {
+  display: grid;
+  justify-items: center;
+  gap: 0.5rem;
+}
+
+.mark {
+  width: clamp(56px, 4vw + 32px, 88px);
+  height: auto;
+}
+
+.name {
+  display: grid;
+  justify-items: center;
+  font-size: clamp(2.5rem, 1.6rem + 3vw, 4.5rem);
+  font-weight: 500;
+  letter-spacing: 0.1em;
+  line-height: 1;
+  text-transform: uppercase;
+  color: var(--forest);
+}
+
+.sub {
+  margin-top: 0.5rem;
+  font-size: 0.45em;
+  letter-spacing: 0.3em;
+}
+
+.rule {
+  width: 9rem;
+  height: 1px;
+  margin-top: 0.5rem;
+  background: var(--line-gold);
+}
+
+.statement {
+  max-width: 34rem;
+  font-family: var(--font-heading);
+  font-size: clamp(2rem, 1.4rem + 2vw, 3.25rem);
+  font-weight: 500;
+  line-height: 1.1;
+  color: var(--forest);
+}
+
+.support {
+  max-width: 30rem;
+  font-family: var(--font-heading);
+  font-size: var(--fs-lead);
+  color: var(--ink);
+}
+
+.facts {
+  display: grid;
+  grid-template-columns: auto auto;
+  gap: 1rem 2.5rem;
+  list-style: none;
+  font-size: var(--fs-body);
+}
+
+.facts li {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+  line-height: 1.35;
+}
+
+.factWide {
+  grid-column: 1 / -1;
+}
+
+.factIcon {
+  flex: none;
+  width: 2.25rem;
+  height: 2.25rem;
+  color: #b8963f;
+}
+
+.actions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.75rem;
+}
+
+.visual {
+  justify-self: center;
+  width: min(100%, 26rem);
+}
+
+.photo {
+  aspect-ratio: 3 / 4;
+  background: var(--paper-deep);
+}
+
+.image {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+@media (max-width: 29.99em) {
+  .actions {
+    width: 100%;
+  }
+
+  .actions :global(.btn) {
+    flex: 1 1 100%;
+  }
+}
+
+@media (min-width: 64em) {
+  /* The arch takes the full height of the screen, so the photograph is as large
+     as it can be and the text column sits right beside it. */
+  .grid {
+    grid-template-columns: minmax(0, 1fr) auto;
+    column-gap: clamp(2rem, 4vw, 4.5rem);
+  }
+
+  .copy {
+    gap: clamp(0.6rem, 2.2svh, 1.5rem);
+  }
+
+  .brand {
+    justify-self: start;
+    gap: clamp(0.25rem, 0.8svh, 0.5rem);
+  }
+
+  .mark {
+    width: clamp(48px, 8svh, 80px);
+  }
+
+  .name {
+    font-size: clamp(2.25rem, min(1.6rem + 3vw, 7svh), 4.5rem);
+  }
+
+  .statement {
+    max-width: 38rem;
+    font-size: clamp(1.75rem, min(1.4rem + 2vw, 5.4svh), 3.25rem);
+  }
+
+  .support {
+    max-width: 34rem;
+  }
+
+  .facts {
+    grid-template-columns: repeat(3, auto);
+    column-gap: clamp(1.25rem, 2.5vw, 2.5rem);
+  }
+
+  .factWide {
+    grid-column: auto;
+  }
+
+  .factIcon {
+    width: clamp(1.75rem, 4svh, 2.25rem);
+    height: clamp(1.75rem, 4svh, 2.25rem);
+  }
+
+  .visual {
+    justify-self: end;
+    width: auto;
+    height: var(--avail);
+    aspect-ratio: 3 / 4;
+  }
+
+  .visual :global(.arch-frame) {
+    height: 100%;
+  }
+
+  .photo {
+    height: 100%;
+    aspect-ratio: auto;
+  }
+}

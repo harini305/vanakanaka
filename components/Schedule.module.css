@@ -1,0 +1,202 @@
+.schedule {
+  background: var(--forest);
+}
+
+.grid {
+  display: grid;
+  gap: clamp(1.5rem, 1rem + 2vw, 3rem);
+  align-items: center;
+}
+
+.visual {
+  justify-self: center;
+  width: min(100%, 22rem);
+}
+
+.arch {
+  border-color: var(--line-gold);
+}
+
+.photo {
+  position: relative;
+  aspect-ratio: 3 / 4;
+}
+
+.image {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.content {
+  min-width: 0;
+}
+
+.head {
+  display: grid;
+  justify-items: center;
+  gap: 0.6rem;
+  margin-bottom: clamp(1rem, 0.6rem + 1.2vw, 2rem);
+  text-align: center;
+}
+
+/* Timetable ruled in gold, like an engraved programme. */
+.table {
+  width: 100%;
+  border-collapse: collapse;
+  text-align: center;
+}
+
+.table thead th {
+  padding: 0 0.75rem 0.75rem;
+  font-size: var(--fs-body);
+  font-weight: 600;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: var(--gold);
+}
+
+.time {
+  display: block;
+  margin-top: 0.15rem;
+  font-size: var(--fs-small);
+  font-weight: 500;
+  letter-spacing: 0.02em;
+  text-transform: none;
+  color: var(--on-dark-soft);
+}
+
+.table tbody tr {
+  border-top: 1px solid var(--line-gold);
+}
+
+.table tbody tr:last-child {
+  border-bottom: 1px solid var(--line-gold);
+}
+
+.table tbody th {
+  padding: 0.6rem 1rem 0.6rem 0;
+  font-size: var(--fs-small);
+  font-weight: 600;
+  letter-spacing: 0.1em;
+  text-align: left;
+  text-transform: uppercase;
+  color: var(--gold);
+}
+
+.table td {
+  padding: 0.6rem 0.75rem;
+  font-size: var(--fs-body);
+  font-weight: 500;
+  line-height: 1.3;
+  color: var(--cream);
+}
+
+.table td + td,
+.table thead th + th {
+  border-left: 1px solid var(--line-soft);
+}
+
+.rest {
+  font-style: italic;
+  font-weight: 400;
+  color: var(--on-dark-soft);
+}
+
+.footer {
+  display: grid;
+  justify-items: center;
+  gap: 0.75rem;
+  margin-top: clamp(1rem, 0.6rem + 1.2vw, 2rem);
+  text-align: center;
+}
+
+.notes {
+  font-size: var(--fs-small);
+  color: var(--on-dark-soft);
+}
+
+@media (min-width: 64em) {
+  .grid {
+    grid-template-columns: minmax(0, 4fr) minmax(0, 7fr);
+    column-gap: clamp(2rem, 5vw, 5rem);
+  }
+
+  .visual {
+    width: min(100%, calc(var(--avail) * 0.72));
+  }
+
+  .head {
+    gap: 0.4rem;
+    margin-bottom: clamp(0.5rem, 2svh, 1.5rem);
+  }
+
+  .table thead th {
+    padding-bottom: clamp(0.35rem, 1.2svh, 0.75rem);
+  }
+
+  .table tbody th,
+  .table td {
+    padding-block: clamp(0.3rem, 1.1svh, 0.6rem);
+  }
+
+  .footer {
+    grid-template-columns: auto minmax(0, 1fr);
+    justify-items: start;
+    align-items: center;
+    gap: 1.5rem;
+    margin-top: clamp(0.75rem, 2.5svh, 1.75rem);
+    text-align: left;
+  }
+}
+
+/* Phones: each day becomes a small block with its three sessions. */
+@media (max-width: 47.99em) {
+  .table,
+  .table tbody,
+  .table tr,
+  .table td,
+  .table tbody th {
+    display: block;
+  }
+
+  .table thead {
+    position: absolute;
+    width: 1px;
+    height: 1px;
+    overflow: hidden;
+    clip: rect(0 0 0 0);
+  }
+
+  .table tbody tr {
+    padding-block: 0.75rem;
+    text-align: left;
+  }
+
+  .table tbody th {
+    padding: 0 0 0.35rem;
+  }
+
+  .table td {
+    display: flex;
+    justify-content: space-between;
+    gap: 1rem;
+    padding: 0.2rem 0;
+    text-align: right;
+  }
+
+  .table td + td {
+    border-left: 0;
+  }
+
+  .table td::before {
+    content: attr(data-label);
+    flex: none;
+    font-size: var(--fs-small);
+    font-weight: 400;
+    color: var(--on-dark-soft);
+    text-align: left;
+  }
+}

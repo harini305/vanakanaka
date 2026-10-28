@@ -1,0 +1,61 @@
+/* Extracted verbatim from https://vanakanaka.com/wp-content/uploads/elementor/css/post-5.css (Elementor global kit) on 2026-10-28. Reference only. */
+.elementor-kit-5{--e-global-color-primary:#364230;--e-global-color-secondary:#54595F;--e-global-color-text:#7A7A7A;--e-global-color-accent:#9f8f52;--e-global-color-e7e2516:#CCA831;--e-global-color-18ae984:#A6944C;--e-global-color-bd7a1a5:#1F470E;--e-global-color-aaf1d23:#f3eee3;--e-global-color-059629b:#919986;--e-global-color-e961420:#a5b4a0;--e-global-color-07da57b:#FFFFFF;--e-global-color-5e841b7:#FAF7F2;--e-global-color-4fd0bfa:#FAFAFA;--e-global-color-9f82227:#EFEFEF;--e-global-color-713eafd:#E9E9E9;--e-global-color-6630291:#BCBCBC;--e-global-color-834be4e:#232323;--e-global-color-e36e2fb:#000000;--e-global-color-3fa48d2:#0A0A0A;--e-global-color-20bd5e7:#E1FFE5;--e-global-color-9fee77c:#F0E2C3;--e-global-color-aff0a7d:#DAD1C0;--e-global-color-63cbccd:#E2E2E2;--e-global-color-c6a0a0f:#FFF4CF;--e-global-color-e39d894:#C5B98F;--e-global-typography-primary-font-family:"DM Sans";--e-global-typography-primary-font-weight:600;--e-global-typography-secondary-font-family:"JT";--e-global-typography-secondary-font-weight:400;--e-global-typography-text-font-family:"DM Sans";--e-global-typography-text-font-weight:400;--e-global-typography-accent-font-family:"DM Sans";--e-global-typography-accent-font-weight:500;--e-global-typography-abbdfad-font-family:"DM Sans";--e-global-typography-abbdfad-font-size:18px;--e-global-typography-abbdfad-font-weight:400;--e-global-typography-abbdfad-text-transform:uppercase;--e-global-typography-abbdfad-letter-spacing:4px;--e-global-typography-868b78c-font-family:"JT";--e-global-typography-868b78c-font-weight:800;--e-global-typography-c2281e4-font-size:14px;--e-global-typography-4e6ad47-font-size:14px;--e-global-typography-4e6ad47-text-transform:uppercase;--e-global-typography-4e6ad47-letter-spacing:2px;--e-global-typography-5b9c2a4-font-family:"DM Sans";--e-global-typography-5b9c2a4-font-size:14px;--e-global-typography-5b9c2a4-font-weight:500;--e-global-typography-5b9c2a4-text-transform:uppercase;--e-global-typography-5b9c2a4-letter-spacing:4px;--e-global-typography-636e08e-font-family:"Cormorant Garamond";--e-global-typography-636e08e-font-weight:600;--e-global-typography-2395496-font-family:"Cormorant Garamond";--e-global-typography-2395496-font-size:48px;--e-global-typography-2395496-font-weight:300;--e-global-typography-dd0d7b3-font-size:14px;--e-global-typography-dd0d7b3-letter-spacing:2px;--e-global-typography-496b542-font-size:14px;--e-global-typography-496b542-font-weight:400;--e-global-typography-496b542-line-height:1lh;--e-global-typography-f40eedb-font-family:"Cormorant Garamond";--e-global-typography-f40eedb-font-size:48px;--e-global-typography-f40eedb-font-weight:300;--e-global-typography-d75da92-font-family:"Cormorant Garamond";--e-global-typography-d75da92-font-weight:600;--e-global-typography-d75da92-font-style:italic;--e-global-typography-0aa55f3-font-family:"DM Sans";--e-global-typography-0aa55f3-font-size:24px;--e-global-typography-0aa55f3-font-weight:500;--e-global-typography-0aa55f3-text-transform:uppercase;--e-global-typography-0aa55f3-letter-spacing:4px;}
+.elementor-kit-5 e-page-transition{background-color:#FFBC7D;}
+.elementor-section.elementor-section-boxed > .elementor-container{max-width:1140px;}
+.e-con{--container-max-width:1140px;--container-default-padding-top:0px;--container-default-padding-right:0px;--container-default-padding-bottom:0px;--container-default-padding-left:0px;}
+.elementor-widget:not(:last-child){--kit-widget-spacing:16px;}
+.elementor-element{--widgets-spacing:16px 16px;--widgets-spacing-row:16px;--widgets-spacing-column:16px;}
+{}
+h1.entry-title{display:var(--page-title-display);}
+.site-header .site-branding{flex-direction:column;align-items:stretch;}
+.site-header{padding-inline-end:0px;padding-inline-start:0px;}
+.site-footer .site-branding{flex-direction:column;align-items:stretch;}
+@media(max-width:1024px){.elementor-section.elementor-section-boxed > .elementor-container{max-width:1024px;}
+.e-con{--container-max-width:1024px;}
+}
+@media(max-width:767px){.elementor-kit-5{--e-global-typography-f40eedb-line-height:2.2lh;}
+.elementor-section.elementor-section-boxed > .elementor-container{max-width:767px;}
+.e-con{--container-max-width:767px;}
+}
+
+/* Start Custom Fonts CSS */@font-face {
+	font-family: 'JT';
+	font-style: normal;
+	font-weight: 100;
+	font-display: auto;
+	src: url('https://vanakanaka.com/wp-content/uploads/2026/05/jtdouro-sans-light.ttf') format('truetype');
+}
+
+@font-face {
+	font-family: 'JT';
+	font-style: normal;
+	font-weight: 200;
+	font-display: auto;
+	src: url('https://vanakanaka.com/wp-content/uploads/2026/05/jtdouro-sans-regular.ttf') format('truetype');
+}
+
+@font-face {
+	font-family: 'JT';
+	font-style: normal;
+	font-weight: bold;
+	font-display: auto;
+	src: url('https://vanakanaka.com/wp-content/uploads/2026/05/jtdouro-sans-bold.ttf') format('truetype');
+}
+
+@font-face {
+	font-family: 'JT';
+	font-style: normal;
+	font-weight: 900;
+	font-display: auto;
+	src: url('https://vanakanaka.com/wp-content/uploads/2026/05/jtdouro-sans-black.ttf') format('truetype');
+}
+
+@font-face {
+	font-family: 'JT';
+	font-style: normal;
+	font-weight: 200;
+	font-display: auto;
+	src: url('https://vanakanaka.com/wp-content/uploads/2026/05/jtdouro-sans-medium.ttf') format('truetype');
+}
+
+/* End Custom Fonts CSS */

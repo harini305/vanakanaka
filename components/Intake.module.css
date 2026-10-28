@@ -1,0 +1,429 @@
+.intake {
+  background: var(--paper);
+}
+
+.head {
+  display: grid;
+  justify-items: center;
+  gap: 0.75rem;
+  margin-bottom: clamp(1.25rem, 0.8rem + 1.5vw, 2.5rem);
+  text-align: center;
+}
+
+.intro {
+  max-width: 40rem;
+  font-size: var(--fs-lead);
+  color: var(--ink);
+}
+
+.cards {
+  display: grid;
+  gap: clamp(1rem, 0.5rem + 1.5vw, 2rem);
+  width: min(100%, 68rem);
+  margin-inline: auto;
+}
+
+/* Cream cards with a warm gold border, as in the studio's printed forms. */
+.card {
+  display: grid;
+  gap: 1rem;
+  align-content: start;
+  padding: clamp(1.25rem, 0.8rem + 1.5vw, 2.25rem);
+  border: 1px solid #d9b98a;
+  border-radius: 14px;
+  background: #fbf7ef;
+  box-shadow: 0 14px 34px rgba(110, 80, 40, 0.08);
+}
+
+.cardTitle {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  font-family: var(--font-text);
+  font-size: clamp(1.25rem, 1rem + 0.8vw, 1.75rem);
+  font-weight: 600;
+  letter-spacing: 0.03em;
+  text-transform: uppercase;
+  color: var(--forest);
+}
+
+.cardIcon {
+  flex: none;
+  width: 2.25rem;
+  height: 2.25rem;
+  color: var(--forest);
+}
+
+.covers {
+  display: grid;
+  gap: 0.3rem;
+  padding-left: 1.25rem;
+  font-size: var(--fs-lead);
+}
+
+.covers li::marker,
+.shala li::marker {
+  color: var(--terracotta);
+}
+
+.shala {
+  display: grid;
+  gap: 0.5rem;
+  padding: 1rem 1.25rem;
+  border: 1px solid #e3cba4;
+  border-radius: 10px;
+  background: #fffdf8;
+}
+
+.shalaTitle {
+  display: flex;
+  align-items: center;
+  gap: 0.6rem;
+  font-family: var(--font-text);
+  font-size: 1.25rem;
+  font-weight: 600;
+  color: var(--forest);
+}
+
+.shalaIcon {
+  width: 1.75rem;
+  height: 1.75rem;
+  color: var(--olive);
+}
+
+.shala ul {
+  display: grid;
+  gap: 0.3rem;
+  padding-left: 1.1rem;
+  font-size: var(--fs-small);
+}
+
+.shalaNote {
+  font-size: var(--fs-small);
+  font-style: italic;
+  color: var(--ink-soft);
+}
+
+.steps {
+  display: grid;
+  gap: 1rem;
+  list-style: none;
+}
+
+.step {
+  display: grid;
+  grid-template-columns: 3.25rem minmax(0, 1fr);
+  gap: 1rem;
+  align-items: center;
+}
+
+.stepBadge {
+  display: grid;
+  place-items: center;
+  width: 3.25rem;
+  height: 3.25rem;
+  border-radius: 50%;
+  background: var(--terracotta);
+  color: var(--cream);
+  font-size: 1.5rem;
+  font-weight: 600;
+}
+
+.stepBadge svg {
+  width: 1.6rem;
+  height: 1.6rem;
+}
+
+.stepTitle {
+  display: block;
+  font-size: var(--fs-lead);
+  font-weight: 600;
+  color: var(--forest);
+}
+
+.stepText {
+  display: block;
+  color: var(--ink);
+}
+
+.openBtn {
+  justify-self: stretch;
+  min-height: 3.5rem;
+  margin-top: 0.5rem;
+  font-size: var(--fs-lead);
+  border-radius: 10px;
+}
+
+.openNote {
+  font-size: var(--fs-small);
+  color: var(--ink-soft);
+  text-align: center;
+}
+
+/* The form opens full width beneath both cards. */
+.panel {
+  grid-column: 1 / -1;
+}
+
+.subTitle {
+  font-family: var(--font-heading);
+  font-size: var(--fs-h3);
+  font-weight: 500;
+  color: var(--forest);
+}
+
+@media (min-width: 64em) {
+  .cards {
+    grid-template-columns: 1fr 1fr;
+    width: min(100%, 72rem);
+  }
+
+  /* Compact on desktop so the heading and both cards share one screen. */
+  .head {
+    gap: 0.4rem;
+    margin-bottom: clamp(0.75rem, 2.5svh, 1.75rem);
+  }
+
+  .intro {
+    max-width: 56rem;
+  }
+
+  .card {
+    gap: clamp(0.5rem, 1.8svh, 1rem);
+    padding: clamp(1rem, 2.6svh, 1.75rem) clamp(1.25rem, 2vw, 2rem);
+  }
+
+  .covers {
+    grid-template-columns: 1fr 1fr;
+    column-gap: 2rem;
+    font-size: var(--fs-body);
+  }
+
+  .shala {
+    padding: clamp(0.6rem, 1.8svh, 1rem) 1.25rem;
+  }
+
+  .steps {
+    gap: clamp(0.5rem, 1.6svh, 1rem);
+  }
+
+  .step {
+    grid-template-columns: clamp(2.5rem, 6svh, 3.25rem) minmax(0, 1fr);
+  }
+
+  .stepBadge {
+    width: clamp(2.5rem, 6svh, 3.25rem);
+    height: clamp(2.5rem, 6svh, 3.25rem);
+  }
+
+  .openBtn {
+    min-height: clamp(2.75rem, 6svh, 3.5rem);
+    margin-top: 0;
+  }
+}
+
+
+/* Form */
+.form,
+.review {
+  display: grid;
+  gap: 2rem;
+  max-width: 56rem;
+  margin: 0.5rem auto 0;
+  padding: clamp(1.25rem, 0.8rem + 2.5vw, 2.75rem);
+  background: var(--cream);
+}
+
+.required {
+  font-size: var(--fs-small);
+  color: var(--ink-soft);
+}
+
+.req {
+  color: #8a2f1d;
+}
+
+.step {
+  display: grid;
+  gap: 1.25rem;
+  min-width: 0;
+  margin: 0;
+  padding: 0;
+  border: 0;
+}
+
+.step > legend {
+  width: 100%;
+  margin-bottom: 1.25rem;
+  padding-bottom: 0.25rem;
+  font-family: var(--font-heading);
+  font-size: var(--fs-h3);
+  font-weight: 600;
+  color: var(--green);
+}
+
+.stepNote {
+  margin-top: -0.5rem;
+  font-size: var(--fs-small);
+  color: var(--ink-soft);
+}
+
+.fields {
+  display: grid;
+  gap: 1rem 1.5rem;
+}
+
+.field {
+  display: grid;
+  gap: 0.35rem;
+  font-size: var(--fs-small);
+  font-weight: 500;
+}
+
+.field input,
+.field textarea {
+  width: 100%;
+  min-height: 2.875rem;
+  padding: 0.65rem 0.8rem;
+  border: 1px solid #b9ae98; /* taste-skill-ignore: form control */
+  border-radius: 0;
+  background: #fffdf8;
+  font-size: var(--fs-body);
+  font-weight: 400;
+  line-height: 1.4;
+}
+
+.field textarea {
+  resize: vertical;
+}
+
+.field input:focus-visible,
+.field textarea:focus-visible {
+  outline: 2px solid var(--green);
+  outline-offset: 1px;
+  border-color: var(--green);
+}
+
+.choice {
+  min-width: 0;
+  margin: 0;
+  padding: 0;
+  border: 0;
+}
+
+.choice > legend {
+  margin-bottom: 0.6rem;
+  padding: 0;
+  font-size: var(--fs-small);
+  font-weight: 500;
+}
+
+.options {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+}
+
+.option {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  min-height: 2.75rem;
+  padding: 0.5rem 0.85rem;
+  border: 1px solid #b9ae98; /* taste-skill-ignore: form control */
+  border-radius: 0;
+  background: #fffdf8;
+  font-size: var(--fs-small);
+  cursor: pointer;
+}
+
+.option:has(input:checked) {
+  border-color: var(--green);
+  background: #e6ead9;
+}
+
+.option input {
+  width: 1.05rem;
+  height: 1.05rem;
+  margin: 0;
+  accent-color: var(--green);
+}
+
+.choice .field {
+  margin-top: 0.75rem;
+}
+
+.waiver {
+  display: grid;
+  gap: 0.5rem;
+  padding-left: 1.1rem;
+  font-size: var(--fs-small);
+  color: var(--ink-soft);
+}
+
+.submitRow {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 0.75rem 1.25rem;
+}
+
+.submitRow p {
+  font-size: var(--fs-small);
+  color: var(--ink-soft);
+}
+
+/* Review */
+.review {
+  gap: 1.25rem;
+}
+
+.review h3:focus {
+  outline: none;
+}
+
+.status {
+  padding: 0.75rem 1rem;
+  background: var(--paper-deep);
+  font-size: var(--fs-small);
+}
+
+.summary {
+  margin: 0;
+  padding: 1rem;
+  overflow-x: auto;
+  background: #fffdf8;
+  font-family: var(--font-text);
+  font-size: var(--fs-small);
+  line-height: 1.6;
+  white-space: pre-wrap;
+  overflow-wrap: anywhere;
+}
+
+.copyState {
+  min-height: 1.5em;
+  font-size: var(--fs-small);
+  color: var(--green);
+}
+
+@media (min-width: 40em) {
+  .fields {
+    grid-template-columns: 1fr 1fr;
+  }
+}
+
+/* Printing from the review screen prints only the answers (see globals.css). */
+@media print {
+  :global(html.printing-intake) .review {
+    position: absolute;
+    inset: 0 0 auto 0;
+    margin: 0;
+    border: 0;
+  }
+
+  :global(html.printing-intake) .reviewActions,
+  :global(html.printing-intake) .status,
+  :global(html.printing-intake) .copyState {
+    display: none;
+  }
+}

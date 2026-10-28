@@ -1,0 +1,123 @@
+.grid {
+  display: grid;
+  gap: clamp(1.5rem, 1rem + 2vw, 3rem);
+}
+
+/* Large photograph with a terracotta-framed inset overlapping its lower corner. */
+.media {
+  position: relative;
+  width: min(100%, 30rem);
+  justify-self: center;
+  padding: 0 0 12% 10%;
+}
+
+.main {
+  position: relative;
+  overflow: hidden;
+  aspect-ratio: 4 / 5;
+  background: var(--paper-deep);
+}
+
+.inset {
+  position: absolute;
+  left: 0;
+  bottom: 0;
+  width: 48%;
+  aspect-ratio: 4 / 3;
+  overflow: hidden;
+  border: 8px solid var(--terracotta);
+  outline: 1px solid var(--terracotta-dark);
+  box-shadow: 0 12px 28px rgba(31, 42, 29, 0.22);
+  background: var(--paper-deep);
+}
+
+.image {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.list {
+  display: grid;
+  list-style: none;
+}
+
+.item {
+  display: grid;
+  grid-template-columns: clamp(3.5rem, 2.5rem + 3vw, 6rem) minmax(0, 1fr);
+  gap: 1.25rem;
+  align-items: center;
+  padding-block: clamp(1rem, 0.6rem + 1.5vw, 2rem);
+}
+
+.item + .item {
+  border-top: 1px solid var(--line-gold);
+}
+
+.icon {
+  width: 100%;
+  height: auto;
+  color: #b8963f;
+}
+
+.itemTitle {
+  margin-bottom: 0.35rem;
+  font-family: var(--font-text);
+  font-size: clamp(1.375rem, 1.1rem + 1vw, 2.125rem);
+  font-weight: 600;
+  letter-spacing: -0.01em;
+  color: var(--forest);
+}
+
+.item p {
+  max-width: 30rem;
+  font-size: var(--fs-lead);
+  line-height: 1.45;
+  color: var(--ink);
+}
+
+@media (min-width: 64em) {
+  /* Photographs fill the left at full height; heading and points share the right. */
+  .grid {
+    grid-template-columns: auto minmax(0, 1fr);
+    grid-template-rows: auto 1fr;
+    column-gap: clamp(2.5rem, 6vw, 6rem);
+    row-gap: clamp(0.5rem, 2svh, 1.5rem);
+    align-items: center;
+  }
+
+  .heading {
+    grid-column: 2;
+    grid-row: 1;
+    align-self: end;
+  }
+
+  .media {
+    grid-column: 1;
+    grid-row: 1 / span 2;
+    justify-self: start;
+    /* main photo 90% wide at 4:5, plus 12% of the width below for the inset */
+    width: calc(var(--avail) / 1.245);
+  }
+
+  .list {
+    grid-column: 2;
+    grid-row: 2;
+    align-self: start;
+  }
+
+  .item {
+    grid-template-columns: clamp(3rem, 8svh, 5rem) minmax(0, 1fr);
+    padding-block: clamp(0.6rem, 2.2svh, 1.5rem);
+  }
+
+  .itemTitle {
+    font-size: clamp(1.25rem, min(1.1rem + 1vw, 4svh), 2.125rem);
+  }
+
+  .item p {
+    font-size: min(var(--fs-lead), 0.3rem + 1.2vw);
+  }
+}

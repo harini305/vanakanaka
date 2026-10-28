@@ -1,0 +1,36 @@
+.page {
+  min-height: auto;
+  justify-content: flex-start;
+}
+
+.article {
+  display: grid;
+  gap: 1.25rem;
+  max-width: calc(46rem + var(--margin) * 2);
+}
+
+.article h1 {
+  font-size: var(--fs-h2);
+  color: var(--green);
+}
+
+.article h2 {
+  margin-top: 1rem;
+  font-size: var(--fs-h3);
+  color: var(--green);
+}
+
+.article ul {
+  display: grid;
+  gap: 0.5rem;
+  padding-left: 1.1rem;
+}
+
+.article li::marker {
+  color: var(--gold);
+}
+
+.notice {
+  padding: 1rem 1.25rem;
+  background: var(--paper-deep);
+}

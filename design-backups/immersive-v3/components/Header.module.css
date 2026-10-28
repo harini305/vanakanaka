@@ -1,0 +1,232 @@
+.header {
+  position: sticky;
+  top: 0;
+  z-index: 50;
+  background: var(--cream);
+  transition: background-color 0.3s var(--ease);
+}
+
+.scrolled {
+  background: var(--cream);
+}
+
+.bar {
+  display: flex;
+  align-items: center;
+  gap: 1.5rem;
+  height: var(--header-h);
+}
+
+.brand {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.6rem;
+  margin-right: auto;
+  text-decoration: none;
+  color: var(--green);
+}
+
+.mark {
+  width: 40px;
+  height: 40px;
+}
+
+.wordmark {
+  font-family: var(--font-heading);
+  font-size: var(--fs-lead);
+  font-weight: 600;
+  letter-spacing: 0.04em;
+  line-height: 1;
+  white-space: nowrap;
+}
+
+.desktopNav {
+  display: none;
+}
+
+.desktopNav ul {
+  display: flex;
+  gap: clamp(1rem, 0.2rem + 1.2vw, 1.75rem);
+  list-style: none;
+}
+
+.link {
+  position: relative;
+  display: inline-block;
+  padding-block: 0.5rem;
+  font-size: var(--fs-small);
+  font-weight: 500;
+  color: var(--ink);
+  text-decoration: none;
+  transition: color 0.2s var(--ease);
+}
+
+.link::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  right: 0;
+  bottom: 0.2rem;
+  height: 2px;
+  background: var(--gold);
+  transform: scaleX(0);
+  transform-origin: left;
+  transition: transform 0.3s var(--ease);
+}
+
+.link:hover {
+  color: var(--green);
+}
+
+.link:hover::after,
+.link[aria-current]::after {
+  transform: scaleX(1);
+}
+
+.link[aria-current] {
+  color: var(--green);
+}
+
+.book {
+  display: none;
+  min-height: 2.5rem;
+  padding: 0.55rem 1.1rem;
+}
+
+.bookExtra {
+  display: none;
+}
+
+.toggle {
+  display: inline-grid;
+  place-items: center;
+  width: 44px;
+  height: 44px;
+  margin-right: -10px;
+  padding: 0;
+  border: 0;
+  background: none;
+  cursor: pointer;
+}
+
+.toggleIcon,
+.toggleIcon::before,
+.toggleIcon::after {
+  display: block;
+  width: 22px;
+  height: 1.5px;
+  background: var(--green);
+  transition:
+    transform 0.3s var(--ease),
+    background-color 0.2s;
+}
+
+.toggleIcon {
+  position: relative;
+}
+
+.toggleIcon::before,
+.toggleIcon::after {
+  content: "";
+  position: absolute;
+  left: 0;
+}
+
+.toggleIcon::before {
+  transform: translateY(-7px);
+}
+
+.toggleIcon::after {
+  transform: translateY(7px);
+}
+
+.toggle[aria-expanded="true"] .toggleIcon {
+  background: transparent;
+}
+
+.toggle[aria-expanded="true"] .toggleIcon::before {
+  transform: rotate(45deg);
+}
+
+.toggle[aria-expanded="true"] .toggleIcon::after {
+  transform: rotate(-45deg);
+}
+
+.panel {
+  position: absolute;
+  top: 100%;
+  left: 0;
+  right: 0;
+  z-index: 2;
+  max-height: calc(100dvh - var(--header-h));
+  overflow-y: auto;
+  background: var(--cream-deep);
+  padding-block: 0.75rem 1.5rem;
+}
+
+.panel[hidden] {
+  display: none;
+}
+
+.panel ul {
+  list-style: none;
+}
+
+.panelLink {
+  display: block;
+  padding: 0.6rem 0;
+  font-family: var(--font-heading);
+  font-size: var(--fs-h3);
+  font-weight: 500;
+  line-height: 1.2;
+  color: var(--ink);
+  text-decoration: none;
+}
+
+.panelLink[aria-current] {
+  color: var(--green);
+  font-style: italic;
+}
+
+.panelBook {
+  width: 100%;
+  margin-top: 1.5rem;
+}
+
+.scrim {
+  position: fixed;
+  inset: var(--header-h) 0 0;
+  z-index: 1;
+  background: rgba(31, 71, 14, 0.25);
+}
+
+@media (min-width: 30em) {
+  .book {
+    display: inline-flex;
+  }
+}
+
+@media (min-width: 75em) {
+  .desktopNav {
+    display: block;
+  }
+
+  .toggle,
+  .panel,
+  .scrim {
+    display: none;
+  }
+
+  .bookExtra {
+    display: inline;
+  }
+
+  .wordmark {
+    font-size: var(--fs-lead);
+  }
+
+  .mark {
+    width: 44px;
+    height: 44px;
+  }
+}

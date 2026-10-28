@@ -1,0 +1,381 @@
+.intake {
+  background: var(--cream-deep);
+  overflow: hidden;
+}
+
+.heading {
+  margin-bottom: 1rem;
+}
+
+.subTitle {
+  font-family: var(--font-heading);
+  font-size: var(--fs-h3);
+  font-weight: 500;
+  color: var(--green);
+}
+
+/* Progress bar and arrows above the row of moments. */
+.bar {
+  display: flex;
+  align-items: center;
+  gap: 1.5rem;
+  margin-bottom: 1.5rem;
+}
+
+.track {
+  flex: 1;
+  height: 6px;
+  background: rgba(29, 36, 25, 0.12);
+  overflow: hidden;
+}
+
+.fill {
+  display: block;
+  height: 100%;
+  background: var(--green);
+  transform-origin: left;
+  transition: transform 0.2s linear;
+}
+
+.arrows {
+  display: none;
+  gap: 0.25rem;
+}
+
+.arrow {
+  display: grid;
+  place-items: center;
+  width: 3rem;
+  height: 3rem;
+  border: 0;
+  background: var(--green);
+  color: var(--cream);
+  font-size: var(--fs-lead);
+  cursor: pointer;
+  transition: background-color 0.2s var(--ease);
+}
+
+.arrow:hover {
+  background: var(--olive);
+}
+
+.arrow:disabled {
+  background: rgba(29, 36, 25, 0.12);
+  color: var(--ink-soft);
+  cursor: default;
+}
+
+/* A horizontally scrolling row that bleeds off both edges of the screen. */
+.row {
+  display: flex;
+  gap: 1rem;
+  margin: 0 calc(var(--margin) * -1);
+  padding: 0 var(--margin) 0.5rem;
+  overflow-x: auto;
+  scroll-snap-type: x mandatory;
+  scroll-padding-inline: var(--margin);
+  list-style: none;
+  scrollbar-width: none;
+}
+
+.row::-webkit-scrollbar {
+  display: none;
+}
+
+.moment {
+  flex: 0 0 72vw;
+  display: flex;
+  flex-direction: column;
+  scroll-snap-align: start;
+}
+
+.momentTitle {
+  font-family: var(--font-text);
+  font-size: var(--fs-body);
+  font-weight: 600;
+  letter-spacing: 0;
+  color: var(--green);
+}
+
+.momentText {
+  margin-top: 0.4rem;
+  font-size: var(--fs-body);
+  line-height: 1.5;
+  color: var(--ink);
+}
+
+.momentPhoto {
+  position: relative;
+  overflow: hidden;
+  aspect-ratio: 4 / 5;
+  margin-top: auto;
+}
+
+.image {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.formArea {
+  margin-top: clamp(1.5rem, 4svh, 2.5rem);
+}
+
+/* One bar: what happens to your answers, and the button that opens the form. */
+.notice {
+  display: grid;
+  gap: 0.75rem 2.5rem;
+  justify-items: start;
+  padding: clamp(1rem, 0.8rem + 1vw, 1.5rem);
+  background: var(--cream);
+}
+
+.notice p {
+  max-width: 52rem;
+  font-size: var(--fs-small);
+  color: var(--ink-soft);
+}
+
+@media (min-width: 48em) {
+  .arrows {
+    display: flex;
+  }
+
+  .row {
+    gap: 1.5rem;
+  }
+
+  .moment {
+    flex-basis: clamp(14rem, 12rem + 4vw, 17rem);
+  }
+
+  .momentPhoto {
+    max-height: calc(var(--screen) - 2 * var(--section-y) - 22rem);
+    min-height: 12rem;
+    aspect-ratio: auto;
+    height: calc((clamp(14rem, 12rem + 4vw, 17rem)) * 1.25);
+  }
+
+  .notice {
+    grid-template-columns: minmax(0, 1fr) auto;
+    align-items: center;
+  }
+
+  .notice > h3 {
+    grid-column: 1 / -1;
+  }
+}
+
+/* Form */
+.form,
+.review {
+  display: grid;
+  gap: 2rem;
+  max-width: 50rem;
+  margin-top: 2rem;
+  padding: clamp(1.25rem, 0.8rem + 2.5vw, 2.75rem);
+  background: var(--cream);
+}
+
+.required {
+  font-size: var(--fs-small);
+  color: var(--ink-soft);
+}
+
+.req {
+  color: #8a2f1d;
+}
+
+.step {
+  display: grid;
+  gap: 1.25rem;
+  min-width: 0;
+  margin: 0;
+  padding: 0;
+  border: 0;
+}
+
+.step > legend {
+  width: 100%;
+  margin-bottom: 1.25rem;
+  padding-bottom: 0.25rem;
+  font-family: var(--font-heading);
+  font-size: var(--fs-h3);
+  font-weight: 600;
+  color: var(--green);
+}
+
+.stepNote {
+  margin-top: -0.5rem;
+  font-size: var(--fs-small);
+  color: var(--ink-soft);
+}
+
+.fields {
+  display: grid;
+  gap: 1rem 1.5rem;
+}
+
+.field {
+  display: grid;
+  gap: 0.35rem;
+  font-size: var(--fs-small);
+  font-weight: 500;
+}
+
+.field input,
+.field textarea {
+  width: 100%;
+  min-height: 2.875rem;
+  padding: 0.65rem 0.8rem;
+  border: 1px solid #b9ae98; /* taste-skill-ignore: form control */
+  border-radius: 0;
+  background: #fffdf8;
+  font-size: var(--fs-body);
+  font-weight: 400;
+  line-height: 1.4;
+}
+
+.field textarea {
+  resize: vertical;
+}
+
+.field input:focus-visible,
+.field textarea:focus-visible {
+  outline: 2px solid var(--green);
+  outline-offset: 1px;
+  border-color: var(--green);
+}
+
+.choice {
+  min-width: 0;
+  margin: 0;
+  padding: 0;
+  border: 0;
+}
+
+.choice > legend {
+  margin-bottom: 0.6rem;
+  padding: 0;
+  font-size: var(--fs-small);
+  font-weight: 500;
+}
+
+.options {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+}
+
+.option {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  min-height: 2.75rem;
+  padding: 0.5rem 0.85rem;
+  border: 1px solid #b9ae98; /* taste-skill-ignore: form control */
+  border-radius: 0;
+  background: #fffdf8;
+  font-size: var(--fs-small);
+  cursor: pointer;
+}
+
+.option:has(input:checked) {
+  border-color: var(--green);
+  background: #e6ead9;
+}
+
+.option input {
+  width: 1.05rem;
+  height: 1.05rem;
+  margin: 0;
+  accent-color: var(--green);
+}
+
+.choice .field {
+  margin-top: 0.75rem;
+}
+
+.waiver {
+  display: grid;
+  gap: 0.5rem;
+  padding-left: 1.1rem;
+  font-size: var(--fs-small);
+  color: var(--ink-soft);
+}
+
+.submitRow {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 0.75rem 1.25rem;
+}
+
+.submitRow p {
+  font-size: var(--fs-small);
+  color: var(--ink-soft);
+}
+
+/* Review */
+.review {
+  gap: 1.25rem;
+}
+
+.review h3:focus {
+  outline: none;
+}
+
+.status {
+  padding: 0.75rem 1rem;
+  background: var(--cream-deep);
+  font-size: var(--fs-small);
+}
+
+.summary {
+  margin: 0;
+  padding: 1rem;
+  overflow-x: auto;
+  background: #fffdf8;
+  font-family: var(--font-text);
+  font-size: var(--fs-small);
+  line-height: 1.6;
+  white-space: pre-wrap;
+  overflow-wrap: anywhere;
+}
+
+.copyState {
+  min-height: 1.5em;
+  font-size: var(--fs-small);
+  color: var(--green);
+}
+
+@media (min-width: 40em) {
+  .fields {
+    grid-template-columns: 1fr 1fr;
+  }
+}
+
+@media (min-width: 64em) {
+  .grid {
+    grid-template-columns: minmax(0, 7fr) minmax(0, 5fr);
+    gap: clamp(3rem, 6vw, 6rem);
+  }
+}
+
+/* Printing from the review screen prints only the answers (see globals.css). */
+@media print {
+  :global(html.printing-intake) .review {
+    position: absolute;
+    inset: 0 0 auto 0;
+    margin: 0;
+    border: 0;
+  }
+
+  :global(html.printing-intake) .reviewActions,
+  :global(html.printing-intake) .status,
+  :global(html.printing-intake) .copyState {
+    display: none;
+  }
+}
